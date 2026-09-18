@@ -1,0 +1,6 @@
+I tried with 6 different positions and it detected a shoe in all of them, even when I put a handbag in the background to confuse the model. This demonstrates that the model is robust and deals well with different positions and challenges due to the use of a highly accurate model as a base (ResNet50).
+
+The last test I did was to check the limits of the model by using an incomplete shoe and a handbag in the background. In that case, the handbag was detected. It probably was detected in that way because the incomplete shoe doesn't show any laces or characteristics to be detected as one. To the model, it could well be a random object flying around when the photo was taken. When that happened, the model saw the handbag in the background and determined that it must be the principal object to detect and classify it. However, if we see the code, as we are only classifying handbags and shoes, the default response could have been set to handbag. To take that theory to the test, I have taken a photo in complete blank and checked the result.
+
+
+As we can see, the blank photo has been classified as a handbag, concluding that the default value is indeed a handbag. To improve the model and if the use case needs it, we should add a third category to answer to us when no handbag and no shoe is in the photo or simply don't classify it in either.
